@@ -4,7 +4,8 @@
   "description": "Fetches data from Dexcom's webservice and puts it in Nightscout.",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --timeout 30000 --exit -R tap 'tests/**/*.test.js'"
+    "test": "NODE_ENV=test mocha --timeout 30000 --exit -R tap 'tests/**/*.test.js'",
+    "start": "node index.js"
   },
   "author": "Ben West",
   "license": "GPL-3.0-only",
