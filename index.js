@@ -37,6 +37,7 @@ var server = "share2.dexcom.com";
 var bridge = readENV('BRIDGE_SERVER')
     if (bridge && bridge.indexOf(".") > 1) {
       server = bridge;
+      console.log('SERVER: ', server)
     }
     else if (bridge && bridge === 'EU') {
       server = "shareous1.dexcom.com";
@@ -151,6 +152,7 @@ function getAccountId(opts, then) {
              , rejectUnauthorized: false };
     // Asynchronously calls the `then` function when the request's I/O
     // is done.
+    console.log('GET ACCOUNT ID: ', req)
     return request(req, then);
 
   }
@@ -222,6 +224,8 @@ function fetch (opts, then) {
 function do_everything (opts, then) {
   var login_opts = opts.login;
   var fetch_opts = opts.fetch;
+  console.log('login_opts: ', login_opts)
+  console.log('fetch_opts: ', fetch_opts)
   authorize(login_opts, function (err, res, body) {
 
     fetch_opts.sessionID = body;
