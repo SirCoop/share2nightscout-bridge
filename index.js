@@ -27,6 +27,10 @@ var qs = require('querystring');
 var crypto = require('crypto');
 var meta = require('./package.json');
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 
 // Defaults
 var server = "share2.dexcom.com";
