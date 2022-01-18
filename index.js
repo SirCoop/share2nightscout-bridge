@@ -359,7 +359,7 @@ function engine (opts) {
         ns_config.entries = entries;
         // Send data to Nightscout.
         report_to_nightscout(ns_config, function (err, response, body) {
-          console.log("Nightscout upload", 'error', err, 'status', response.statusCode, body);
+          console.log("Nightscout upload", 'error', err, 'status', response, body);
 
         });
       }
